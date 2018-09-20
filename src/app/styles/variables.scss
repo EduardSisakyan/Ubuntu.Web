@@ -1,0 +1,23 @@
+// Main colors
+
+$black      : #1e1e1e;
+$white      : #ffffff;
+$gray       : #A2A3AD;
+$light      : #f1f1f1;
+$light-gray : #cccccc;
+$blue       : #16719A;
+$light-blue : #F5F6FC;
+$green      : #007844;
+$red        : #9d0000;
+$yellow     : #e7ad00;
+$orange     : #ff725e;
+
+// Alternative styles
+$shadow       : 0 0 10px transparentize($black, 0.9);
+$radius       : 10px;
+$small-radius : 7px;
+// App Components styles
+
+$left-side-width  : 300px;
+$padding          : 40px;
+$input-height     : 35px;

@@ -4,7 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "Ubuntu-web": {
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
@@ -20,10 +20,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/app/platform/assets/images"
             ],
             "styles": [
-              "src/styles.css"
+              "src/app/platform/assets/styles/normalize.css",
+              "src/app/platform/assets/styles/overwrite.css",
+              "src/app/platform/assets/fonts/icons/style.css"
             ],
             "scripts": []
           },

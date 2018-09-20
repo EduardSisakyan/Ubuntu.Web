@@ -1,0 +1,16 @@
+@import './global';
+
+main {
+  width    : 100vw;
+  height   : 100vh;
+  overflow : hidden;
+
+  .FM-router-content {
+    width      : 100%;
+
+    &.FM-is-logged-in {
+      width      : calc(100% - #{$left-side-width});
+      overflow-y : overlay;
+    }
+  }
+}

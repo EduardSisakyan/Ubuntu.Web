@@ -1,0 +1,6 @@
+<div class="FM-modal-wrap">
+  <div class="FM-modal-bg" (click)="close.emit()"></div>
+  <div class="FM-modal-container" [class.FM-to-right]="toRight">
+    <ng-content></ng-content>
+  </div>
+</div>

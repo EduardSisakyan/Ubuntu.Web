@@ -1,0 +1,63 @@
+@import '../../../styles/global';
+
+.FM-loader-wrap {
+
+  width            : 100%;
+  height           : 2px;
+  position         : absolute;
+  top              : 0;
+  left             : 0;
+  display          : flex;
+  background-color : $blue;
+
+  .FM-loader-item {
+
+    width           : 15%;
+    display         : flex;
+    justify-content : space-between;
+
+    span {
+      width                     : 30px;
+      height                    : 100%;
+      position                  : absolute;
+      left                      : -15%;
+      display                   : block;
+      animation-iteration-count : infinite;
+      animation-duration        : 3s;
+      animation-name            : loaderAnim;
+      background-color          : $orange;
+    }
+
+    &:first-child {
+
+      span {
+
+        &:last-child {
+          animation-delay : .2s;
+        }
+      }
+    }
+
+    &:last-child {
+
+      span {
+        &:first-child {
+          animation-delay : 1.2s;
+        }
+
+        &:last-child {
+          animation-delay : 1.4s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loaderAnim {
+  from {
+    left: -15%;
+  }
+  to {
+    left: 115%;
+  }
+}

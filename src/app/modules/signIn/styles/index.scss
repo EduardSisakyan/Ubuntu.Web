@@ -1,0 +1,22 @@
+@import "../../../styles/global";
+
+.FM-sign-in-page {
+  height     : 100vh;
+  background : url('../../../platform/assets/images/login.jpg') no-repeat center/cover;
+
+  form {
+    width            : 400px;
+    padding          : 50px 40px;
+    border-radius    : 20px;
+    background-color : $white;
+
+    input {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width         : 100%;
+      border-radius : 20px;
+    }
+  }
+}

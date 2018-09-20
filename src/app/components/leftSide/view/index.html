@@ -1,0 +1,26 @@
+
+<aside class="FM-left-side">
+  <div class="FM-header G-flex G-center">
+    <!-- <img src="app/platform/assets/images/logo-light.png" alt=""> -->
+  </div>
+  <div class="FM-content">
+    <div class="FM-menu-item G-flex G-align-center" routerLink="home" routerLinkActive="active">
+      <i class="icon-home"></i>
+      <p>home</p>
+    </div>
+    <ng-container *ngFor="let item of list">
+      <div class="FM-menu-item G-flex G-align-center" *ngIf="!item.children" [routerLink]="item.path" routerLinkActive="active">
+        <i [class]="item.icon"></i>
+        <p>{{ item.name }}</p>
+      </div>
+
+      <div class="FM-menu-item G-flex G-align-center" *ngIf="item.children" (click)="changeItemIsOpenState(item)">
+        <i [class]="item.icon"></i>
+        <p>{{ item.name }}</p>
+      </div>
+      <div class="FM-drop-down" *ngIf="item.isOpen">
+        <p *ngFor="let child of item.children" [routerLink]="item.path + '/' + child.path" routerLinkActive="active">{{child.name}}</p>
+      </div>
+    </ng-container>
+  </div>
+</aside>

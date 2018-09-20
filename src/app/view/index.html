@@ -1,0 +1,10 @@
+
+<main class="G-flex">
+  <app-left-side *ngIf="loginState"></app-left-side>
+  <div class="FM-router-content" [class.FM-is-logged-in]="loginState">
+    <app-loader *ngIf="loaderState && loginState"></app-loader>
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<app-toaster></app-toaster>

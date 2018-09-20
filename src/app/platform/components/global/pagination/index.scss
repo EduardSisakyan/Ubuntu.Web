@@ -1,0 +1,22 @@
+@import '../../../../styles/global';
+
+.G-input {
+  width : 50px;
+}
+
+p {
+  padding     : 10px;
+  user-select : none;
+}
+
+.FM-pagination {
+
+  p {
+    cursor : pointer;
+    color  : $gray;
+
+    &.active, &:hover, &.FM-btn {
+      color : $blue;
+    }
+  }
+}

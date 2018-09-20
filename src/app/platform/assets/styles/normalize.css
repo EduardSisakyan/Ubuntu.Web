@@ -1,0 +1,72 @@
+/* You can add HTML default tag styles */
+
+@font-face {
+  font-family : 'PT';
+  src         : url('../fonts/PT.ttf');
+}
+
+* {
+  margin      : 0;
+  padding     : 0;
+  box-sizing  : border-box;
+  font-family : 'PT';
+}
+
+body {
+  font-size   : 16px;
+  background  : #F5F6FC;
+  color       : #1e1e1e;
+  overflow    : hidden;
+}
+
+textarea, input, button {
+  font-size   : 16px !important;
+  font-family : 'PT' !important;
+  outline     : none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  margin     : 0;
+  appearance : none;
+}
+
+i[class*=icon] {
+  cursor : pointer;
+}
+
+textarea { resize : none; }
+a, button { cursor : pointer; }
+
+button {
+  border           : 0;
+  background-color : transparent;
+}
+
+h1, h2, h3 {
+  letter-spacing : 1px;
+}
+
+h1 { font-size : 40px; }
+h2 { font-size : 32px; }
+h3 { font-size : 28px; }
+h4 { font-size : 24px; }
+h5 { font-size : 22px; }
+h6 { font-size : 16px; }
+p  { font-size : 16px; }
+
+*::-webkit-scrollbar-track, *::-ms-autohiding-scrollbar {
+  border-radius    :  2px;
+  background-color :  #F5F5F5;
+}
+
+*::-webkit-scrollbar {
+  width            : 4px;
+  height           : 8px;
+  background-color : #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius      : 4px;
+  background-color   : grey;
+}

@@ -1,0 +1,12 @@
+/* These are rewriting styles for other packages */
+
+/* Icons */
+
+[class*=icon-] {
+  font-size   : 20px;
+  user-select : none;
+}
+
+.icon-delete {
+  color : #9d0000;
+}

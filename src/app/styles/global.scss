@@ -1,0 +1,113 @@
+@import './variables';
+
+.G-capitalize {
+  text-transform : capitalize;
+}
+
+.G-background-image {
+  background-size     : cover;
+  background-position : center;
+  background-repeat   : no-repeat;
+}
+
+/* Flex styles */
+
+.G-flex {
+  display : flex;
+}
+
+.G-center {
+  justify-content : center;
+  align-items     : center;
+}
+
+.G-justify-center {
+  justify-content : center;
+}
+
+.G-justify-between {
+  justify-content : space-between;
+}
+
+.G-justify-around {
+  justify-content : space-around;
+}
+
+.G-justify-end {
+  justify-content : flex-end;
+}
+
+.G-align-center {
+  align-items : center;
+}
+
+.G-align-start {
+  align-items : flex-start;
+}
+
+.G-align-end {
+  align-items : flex-end;
+}
+
+.G-flex-column {
+  flex-direction : column;
+}
+
+.G-flex-wrap {
+  flex-wrap : wrap;
+}
+
+/* Buttons */
+
+.G-btn {
+  padding          : 7px 25px;
+  text-transform   : uppercase;
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  color            : $white;
+  background-color : $blue;
+
+  i {
+    margin-right : 5px;
+  }
+}
+
+/* Inputs */
+
+.G-input {
+  width       : 100%;
+  height      : 35px;
+  border      : 1px solid $light-gray;
+  text-indent : 10px;
+}
+
+.G-error {
+  box-shadow : 0 0 8px transparentize($red, 0.5);
+}
+
+/* Checkbox directive */
+
+.G-checkbox-item {
+  width            : 20px;
+  height           : 20px;
+  min-width        : 20px;
+  min-height       : 20px;
+  font-size        : 10px;
+  font-weight      : bold;
+  border-radius    : 3px;
+  border           : 1px solid #bbbbbb;
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  cursor           : pointer;
+  background-color : $white;
+}
+
+.G-checkbox-active {
+  border           : 2px solid $blue;
+  color            : $white;
+  background-color : $blue;
+}
+
+/* Checkbox directive end */

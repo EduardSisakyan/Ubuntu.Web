@@ -1,0 +1,77 @@
+@import "../../../../styles/global";
+
+$width : 300px;
+$right : 20px;
+
+.FM-toaster-wrap {
+  width    : $width;
+  position : fixed;
+  right    : $right;
+  bottom   : 20px;
+  z-index  : 20000;
+
+  .FM-toaster-item {
+    width                     : 100%;
+    margin-bottom             : 20px;
+    padding                   : 25px;
+    border-radius             : 4px;
+    opacity                   : .7;
+    position                  : relative;
+    transition                : all .2s;
+    animation-name            : startAnim;
+    animation-duration        : .2s;
+    animation-timing-function : ease-in-out;
+    animation-fill-mode       : forwards;
+    cursor                    : pointer;
+    color                     : $white;
+
+    &:hover, &.FM-active {
+      opacity : 1;
+    }
+
+    &.FM-success {
+      background-color : $green;
+    }
+
+    &.FM-warning {
+      background-color : $yellow;
+    }
+
+    &.FM-error {
+      background-color : $red;
+    }
+
+    &.FM-hide {
+      animation-name : finishAnim;
+    }
+
+    .icon-cancel {
+      position  : absolute;
+      top       : 10px;
+      right     : 10px;
+      font-size : 16px;
+    }
+
+    p {
+      font-size : 18px;
+    }
+  }
+}
+
+@keyframes startAnim {
+  from {
+    transform : translateX($width + $right);
+  }
+  to {
+    transform : translateX(0);
+  }
+}
+
+@keyframes finishAnim {
+  from {
+    transform : translateX(0);
+  }
+  to {
+    transform : translateX($width + $right);
+  }
+}
