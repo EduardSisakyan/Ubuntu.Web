@@ -7,9 +7,9 @@ import { IMenuItemViewModel } from '../models';
 export class Services {
   public menuItems: IMenuItemViewModel[] = [
     {
-      name: 'users',
-      path: 'users',
-      icon: 'icon-users',
+      name: 'servers',
+      path: 'servers',
+      icon: 'icon-operators',
     },
   ];
 }

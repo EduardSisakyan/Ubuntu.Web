@@ -1,26 +1,31 @@
 
-<aside class="FM-left-side">
-  <div class="FM-header G-flex G-center">
-    <!-- <img src="app/platform/assets/images/logo-light.png" alt=""> -->
+<aside class="UW-left-side">
+  <div class="UW-header G-flex G-center">
+    <img src="app/platform/assets/images/logo.png" alt="">
+    <p>UBUNTU</p>
   </div>
-  <div class="FM-content">
-    <div class="FM-menu-item G-flex G-align-center" routerLink="home" routerLinkActive="active">
+  <div class="UW-content">
+    <div class="UW-menu-item G-flex G-align-center" routerLink="home" routerLinkActive="active">
       <i class="icon-home"></i>
       <p>home</p>
     </div>
     <ng-container *ngFor="let item of list">
-      <div class="FM-menu-item G-flex G-align-center" *ngIf="!item.children" [routerLink]="item.path" routerLinkActive="active">
+      <div class="UW-menu-item G-flex G-align-center" *ngIf="!item.children" [routerLink]="item.path" routerLinkActive="active">
         <i [class]="item.icon"></i>
         <p>{{ item.name }}</p>
       </div>
 
-      <div class="FM-menu-item G-flex G-align-center" *ngIf="item.children" (click)="changeItemIsOpenState(item)">
+      <div class="UW-menu-item G-flex G-align-center" *ngIf="item.children" (click)="changeItemIsOpenState(item)">
         <i [class]="item.icon"></i>
         <p>{{ item.name }}</p>
       </div>
-      <div class="FM-drop-down" *ngIf="item.isOpen">
+      <div class="UW-drop-down" *ngIf="item.isOpen">
         <p *ngFor="let child of item.children" [routerLink]="item.path + '/' + child.path" routerLinkActive="active">{{child.name}}</p>
       </div>
     </ng-container>
+    <div class="UW-menu-item G-flex G-align-center" (click)="logOut()">
+      <i class="icon-next"></i>
+      <p>log out</p>
+    </div>
   </div>
 </aside>

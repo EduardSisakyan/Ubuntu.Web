@@ -1,21 +1,24 @@
 @import "../../../styles/global";
 
-.FM-left-side {
+.UW-left-side {
   width            : $left-side-width;
   height           : 100vh;
   background-color : $blue;
 
-  .FM-header {
-    height        : 60px;
-    border-bottom : 1px solid #4F567A;
+  .UW-header {
+    height : 60px;
 
     img {
       height  : 60%;
       display : block;
     }
+
+    p {
+      color : $white;
+    }
   }
 
-  .FM-content {
+  .UW-content {
     padding : $padding 20px;
 
     p {
@@ -23,7 +26,7 @@
       color          : $white;
     }
 
-    .FM-menu-item {
+    .UW-menu-item {
       margin-bottom : 10px;
       padding       : 10px 20px;
       border-radius : 20px;
@@ -33,12 +36,12 @@
 
       &.active {
         box-shadow       : 0 3px 6px rgba(0, 0, 0, .2);
-        background-color : #29325D;
+        background-color : $orange;
       }
 
       &:hover {
         box-shadow       : 0 3px 6px rgba(0, 0, 0, .2);
-        background-color : #29325D;
+        background-color : transparentize($orange, 0.1);
       }
 
       i {
@@ -47,7 +50,7 @@
       }
     }
 
-    .FM-drop-down {
+    .UW-drop-down {
 
       p {
         margin-bottom : 10px;
@@ -60,12 +63,12 @@
 
         &.active {
           box-shadow       : 0 3px 6px rgba(0, 0, 0, .2);
-          background-color : #29325D;
+          background-color : $orange;
         }
 
         &:hover {
           box-shadow       : 0 3px 6px rgba(0, 0, 0, .2);
-          background-color : #29325D;
+          background-color : transparentize($orange, 0.1);
         }
       }
     }

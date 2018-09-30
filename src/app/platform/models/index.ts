@@ -25,16 +25,15 @@ export interface ISelectModel<T = any> {
   default ?: boolean;
 }
 
-export interface IPaginationViewModel<T> {
-  readonly pageCount: number;
-  readonly itemCount: number;
+export interface IPagingResModel<T> {
+  itemCount: number;
+  pageCount: number;
   data: T[];
 }
 
-export interface IGetViaPaginationModel {
-  count: number;
-  page: number;
-  dateFrom: string;
+export interface IPagingBodyModel {
+  limit: number;
+  offset: number;
 }
 
 export interface IToasterModel {
@@ -46,4 +45,11 @@ export interface IToasterViewModel extends IToasterModel {
   id: number;
   isActive: boolean;
   disableRemove: boolean;
+}
+
+export interface IProfileDetailsModel {
+  username: string;
+  role: number;
+  updatedDt: Date;
+  createdDt: Date;
 }

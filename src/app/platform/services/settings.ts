@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Dispatcher }  from './dispatcher';
 import { environment } from '../../../environments/environment';
+import { IProfileDetailsModel } from 'app/platform/models';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +10,10 @@ import { environment } from '../../../environments/environment';
 
 export class Settings {
 
-  public userToken: string;
-  public defaultPath: string;
+  private userToken: string;
+  public defaultPath: string = 'home';
+  public personDetails: IProfileDetailsModel;
 
-  constructor(
-  ) {}
-
-  private getDefaultPath = (): string => {
-    return 'home';
-  }
 
   public get url(): string {
     return environment.hostUrl;

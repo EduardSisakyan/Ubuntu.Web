@@ -1,8 +1,7 @@
-<div class="FM-sign-in-page G-flex G-center" *ngIf="!loginState">
+<div class="UW-sign-in-page G-flex G-center" *ngIf="!loginState">
   <form [formGroup]="form" #formDir="ngForm">
     <input class="G-input" type="text" placeholder="Login" formControlName="email">
     <input class="G-input" type="password" placeholder="Password" formControlName="password">
-
     <button class="G-btn" (click)="submit()">Sign in</button>
   </form>
 </div>

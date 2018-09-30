@@ -1,6 +1,6 @@
 
 export interface ILoginBodyViewModel {
-  login: string;
+  username: string;
   password: string;
 }
 

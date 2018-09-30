@@ -1,13 +1,13 @@
 
-<div class="FM-toaster-wrap">
+<div class="UW-toaster-wrap">
   <div
-    class="FM-toaster-item"
+    class="UW-toaster-item"
     *ngFor="let item of elements"
-    [class.FM-active]="item.disableRemove"
-    [class.FM-hide]="!item.isActive"
-    [class.FM-success]="item.status === ToasterStatusEnum.success"
-    [class.FM-warning]="item.status === ToasterStatusEnum.warning"
-    [class.FM-error]="item.status === ToasterStatusEnum.error"
+    [class.UW-active]="item.disableRemove"
+    [class.UW-hide]="!item.isActive"
+    [class.UW-success]="item.status === ToasterStatusEnum.success"
+    [class.UW-warning]="item.status === ToasterStatusEnum.warning"
+    [class.UW-error]="item.status === ToasterStatusEnum.error"
     (click)="disableRemove(item.id)">
     <i class="icon-cancel" (click)="hideItem(item.id, $event)"></i>
     <p>{{ item.text }}</p>

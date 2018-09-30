@@ -1,16 +1,16 @@
 <click-outside (clickOutside)="close()">
-  <div class="FM-select-box">
-    <div class="FM-select" (click)="toggle()" [class.G-error]="error">
-      <div class="FM-select-title">
+  <div class="UW-select-box">
+    <div class="UW-select" (click)="toggle()" [class.G-error]="error">
+      <div class="UW-select-title">
         <p *ngIf="!multiple">{{ selectedItem && selectedItem.name || placeholder }}</p>
         <p *ngIf="multiple">{{ values.length ? values.length + ' Selected' : placeholder }}</p>
       </div>
-      <i class="icon-arrow_down_1 FM-select-title-icon"></i>
+      <i class="icon-arrow_down_1 UW-select-title-icon"></i>
     </div>
-    <div class="FM-select-options" [class.show]="isOpen">
-      <div class="FM-select-option"
+    <div class="UW-select-options" [class.show]="isOpen">
+      <div class="UW-select-option"
         *ngFor="let item of list; let index = index"
-        [class.FM-active]="isSelected(item)"
+        [class.UW-active]="isSelected(item)"
         (click)="change(item)">
         <p class="G-flex G-justify-between G-align-center">
           {{item.name}}

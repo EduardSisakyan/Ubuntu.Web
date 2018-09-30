@@ -5,12 +5,14 @@ main {
   height   : 100vh;
   overflow : hidden;
 
-  .FM-router-content {
+  .UW-router-content {
     width      : 100%;
 
-    &.FM-is-logged-in {
+    &.UW-is-logged-in {
       width      : calc(100% - #{$left-side-width});
       overflow-y : overlay;
+      padding    : $content-top-padding $padding $content-top-padding $padding;
+
     }
   }
 }

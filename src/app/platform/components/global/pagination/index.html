@@ -1,9 +1,9 @@
 
 
-<div class="G-flex G-justify-between FM-pagination">
+<div class="G-flex G-justify-between UW-pagination">
   <div class="G-flex">
     <ng-container *ngIf="pageCount > 1">
-      <p *ngIf="activePage !== 1" (click)="prev()" class="FM-btn">prev</p>
+      <p *ngIf="activePage !== 1" (click)="prev()" class="UW-btn">prev</p>
       <ng-container *ngFor="let item of createRange(pageCount)">
         <p *ngIf="item === pageCount && activePage + activePageInterval + 1 < pageCount">...</p>
         <p *ngIf="checkPaginationItems(item)" (click)="changePage(item)" [class.active]="activePage === item">
@@ -11,7 +11,7 @@
         </p>
         <p *ngIf="item === 1 && activePage - activePageInterval - 1 > 1">...</p>
       </ng-container>
-      <p *ngIf="activePage !== pageCount" (click)="next()" class="FM-btn">next</p>
+      <p *ngIf="activePage !== pageCount" (click)="next()" class="UW-btn">next</p>
     </ng-container>
   </div>
 

@@ -1,0 +1,58 @@
+<div class="G-flex G-justify-end">
+  <button class="G-btn" (click)="openCreateModal()">Create</button>
+</div>
+
+
+<div class="G-block G-table-wrap">
+  <div class="G-th">
+    <div class="G-th-titles">
+      <div class="G-tc">
+        <h6>Name</h6>
+      </div>
+      <div class="G-tc">
+        <h6>Host</h6>
+      </div>
+      <div class="G-tc">
+        <h6>Username</h6>
+      </div>
+      <div class="G-tc">
+        <h6>Created Date</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="G-tb">
+    <ng-container *ngIf="tableData.length">
+      <div class="G-tr" *ngFor="let item of tableData">
+        <div class="G-tc">
+          <p>{{ item.name }}</p>
+        </div>
+        <div class="G-tc">
+          <p>{{ item.host }}</p>
+        </div>
+        <div class="G-tc">
+          <p>{{ item.username }}</p>
+        </div>
+        <div class="G-tc">
+          <p>{{ item.createdDt | date: 'dd/MM/yy' }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <div *ngIf="!tableData.length" class="G-table-empty">
+      <h5>Servers list is empty</h5>
+    </div>
+  </div>
+</div>
+
+<g-pagination
+  [limit]="limit"
+  [pageCount]="pageCount"
+  [activePage]="pageNo"
+  (changeLimit)="changeLimit($event)"
+  (changeActivePage)="changeActivePage($event)">
+</g-pagination>
+
+<modal-wrap *ngIf="createModalState" [isOpen]="createModalState" (close)="closeCreateModal()">
+  <manage-server (close)="closeCreateModal()" (update)="getList()"></manage-server>
+</modal-wrap>

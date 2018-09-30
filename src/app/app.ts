@@ -23,9 +23,9 @@ import { Login }  from 'app/platform/services/guards/login';
 /* providers */
 
 import { Settings }      from './platform/services/settings';
-import { Dispatcher }    from './platform/services/dispatcher';
 import { AppHelper }     from './platform/services/helper';
 import { ToasterModule } from './platform/sharedModules/toaster';
+import { PersonService } from 'app/platform/api/person';
 
 /* providers */
 
@@ -52,33 +52,33 @@ export class AppModule {
     private router: Router,
     private settings: Settings,
     private helper: AppHelper,
+    private personService: PersonService,
     private login: Login,
-    private dispatcher: Dispatcher,
   ) {
-    // this.router.events
-    //   .subscribe(event => {
-    //     if (this.helper.getCookieStatus(event)) {
-    //       if (this.settings.token) {
-    //         if (event instanceof NavigationStart) {
-    //           if (!this.settings.routePermissions.length) {
-    //             this.permissionsService.getPagePermissions()
-    //               .subscribe(data => {
-    //                 if (data && data.value) {
-    //                   this.dispatcher.routePermissionsState = data.value;
-    //                   this.login.loggedIn();
-    //                   if (event.url === '/' || event.url === '/sign-in') {
-    //                     this.router.navigate([this.settings.defaultPath]);
-    //                   } else this.router.navigate([event.url]);
-    //                 } else this.login.loggedOut();
-    //               }, () => this.login.loggedOut());
-    //           }
-    //         }
-    //       } else if (event instanceof NavigationStart) {
-    //         if (event.url.search('sign-in') === -1) {
-    //           this.router.navigate(['sign-in']);
-    //         }
-    //       }
-    //     }
-    //   });
+    this.router.events
+      .subscribe(event => {
+        if (this.helper.getCookieStatus(event)) {
+          if (this.settings.token) {
+            if (event instanceof NavigationStart) {
+              if (!this.settings.personDetails) {
+                this.personService.getProfileDetails()
+                  .subscribe(data => {
+                    if (data && data.value) {
+                      this.settings.personDetails = data.value;
+                      this.login.loggedIn();
+                      if (event.url === '/' || event.url === '/sign-in') {
+                        this.router.navigate([this.settings.defaultPath]);
+                      } else this.router.navigate([event.url]);
+                    } else this.login.loggedOut();
+                  }, () => this.login.loggedOut());
+              }
+            }
+          } else if (event instanceof NavigationStart) {
+            if (event.url.search('sign-in') === -1) {
+              this.router.navigate(['sign-in']);
+            }
+          }
+        }
+      });
   }
 }

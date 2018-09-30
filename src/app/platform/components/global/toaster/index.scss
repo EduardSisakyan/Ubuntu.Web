@@ -3,14 +3,14 @@
 $width : 300px;
 $right : 20px;
 
-.FM-toaster-wrap {
+.UW-toaster-wrap {
   width    : $width;
   position : fixed;
   right    : $right;
   bottom   : 20px;
   z-index  : 20000;
 
-  .FM-toaster-item {
+  .UW-toaster-item {
     width                     : 100%;
     margin-bottom             : 20px;
     padding                   : 25px;
@@ -25,23 +25,23 @@ $right : 20px;
     cursor                    : pointer;
     color                     : $white;
 
-    &:hover, &.FM-active {
+    &:hover, &.UW-active {
       opacity : 1;
     }
 
-    &.FM-success {
+    &.UW-success {
       background-color : $green;
     }
 
-    &.FM-warning {
+    &.UW-warning {
       background-color : $yellow;
     }
 
-    &.FM-error {
+    &.UW-error {
       background-color : $red;
     }
 
-    &.FM-hide {
+    &.UW-hide {
       animation-name : finishAnim;
     }
 

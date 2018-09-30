@@ -3,11 +3,11 @@ import { Router }                             from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Dispatcher }   from 'app/platform/services/dispatcher';
-import { TokenService } from 'app/platform/api/token';
+import { AuthService } from 'app/platform/api/auth';
 import { Settings }     from 'app/platform/services/settings';
 import { Login }        from 'app/platform/services/guards/login';
 
-import { ILoginBodyViewModel, ILoginResponseViewModel } from 'app/platform/models/api/token';
+import { ILoginBodyViewModel, ILoginResponseViewModel } from 'app/platform/models/api/auth';
 
 @Component({
   templateUrl : '../view/index.html',
@@ -17,7 +17,6 @@ import { ILoginBodyViewModel, ILoginResponseViewModel } from 'app/platform/model
 export class Controller implements OnInit {
 
   public id: number;
-  public setPasswordModal: boolean = false;
   public form: FormGroup;
   public loginState: boolean;
 
@@ -25,7 +24,7 @@ export class Controller implements OnInit {
   get password() { return this.form.get('password').value; }
 
   constructor(
-    private tokenService: TokenService,
+    private authService: AuthService,
     private dispatcher: Dispatcher,
     private settings: Settings,
     private router: Router,
@@ -39,25 +38,19 @@ export class Controller implements OnInit {
     return !!(data && data.accessToken);
   }
 
-  public closeSetPasswordModal = () => this.setPasswordModal = false;
-  public openSetPasswordModal = () => this.setPasswordModal = true;
-
   public submit = () => {
     if (this.form.valid) {
       const body: ILoginBodyViewModel = {
-        login: this.email,
+        username: this.email,
         password: this.password,
       };
-      this.tokenService.login(body)
-        .subscribe(
-          (data) => {
-            if (this.handleData(data.value)) {
-              this.login.loggedIn();
-              this.router.navigate([this.settings.defaultPath]);
-            }
-          },
-          () => this.login.loggedOut(),
-        );
+      this.authService.login(body)
+        .subscribe(data => {
+          if (this.handleData(data.value)) {
+            this.login.loggedIn();
+            this.router.navigate([this.settings.defaultPath]);
+          }
+        });
     }
   }
 

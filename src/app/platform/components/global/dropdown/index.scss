@@ -4,7 +4,7 @@
   width : 100%;
 }
 
-.FM-select-box {
+.UW-select-box {
 
   width         : 100%;
   height        : $input-height;
@@ -12,7 +12,7 @@
   border-radius : $small-radius;
   position      : relative;
 
-  .FM-select {
+  .UW-select {
 
     width            : 100%;
     height           : 100%;
@@ -25,7 +25,7 @@
       user-select : none;
     }
 
-    .FM-select-title {
+    .UW-select-title {
 
       padding-left : 10px;
       position     : relative;
@@ -33,7 +33,7 @@
       transform    : translateY(-50%);
     }
 
-    .FM-select-title-icon {
+    .UW-select-title-icon {
 
       width     : 10px;
       height    : 10px;
@@ -45,7 +45,7 @@
     }
   }
 
-  .FM-select-options {
+  .UW-select-options {
     width            : calc(100% + 1px);
     min-height       : 50px;
     max-height       : 180px;
@@ -63,7 +63,7 @@
       display : block;
     }
 
-    .FM-select-option {
+    .UW-select-option {
 
       width         : 100%;
       height        : auto;
@@ -76,7 +76,7 @@
         opacity   : 0;
       }
 
-      &:hover, &.FM-active {
+      &:hover, &.UW-active {
         background-color : $light;
 
         i {

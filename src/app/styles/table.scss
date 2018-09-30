@@ -1,0 +1,115 @@
+@import './variables';
+
+$content-padding : 20px;
+$row-height      : 60px;
+
+.G-table-wrap {
+  margin-top : 50px;
+  padding    : 10px 0;
+  overflow-x : auto;
+
+  .G-th {
+    width         : fit-content;
+    height        : $row-height;
+    min-width     : 100%;
+    padding       : 0 $content-padding;
+    border-bottom : 4px solid #F5F6FC;
+    overflow      : hidden;
+
+    h6 {
+      text-transform : uppercase;
+    }
+
+    i.icon-settings_1 {
+      font-size : 22px;
+    }
+
+    .G-th-titles {
+      height      : 100%;
+      display     : flex;
+      align-items : center;
+      transition  : all .3s;
+      transform   : translateY(0);
+
+      &.G-active {
+        transform : translateY(-100%);
+      }
+    }
+
+    .G-th-btns {
+      height          : 100%;
+      display         : flex;
+      align-items     : center;
+      justify-content : space-between;
+      transition      : all .3s;
+      transform       : translateY(0);
+
+      &.G-active {
+        transform : translateY(-100%);
+      }
+
+      h6 {
+        margin-right : 20px;
+        cursor       : pointer;
+      }
+    }
+  }
+
+  .G-tb {
+    min-height : 50vh;
+    padding    : 10px 0;
+
+    .G-tr {
+      height      : $row-height;
+      padding     : 0 $content-padding;
+      display     : flex;
+      align-items : center;
+
+      .icon-delete {
+        margin-left : 5px;
+      }
+
+      .G-actions {
+        transition : all .1s;
+        opacity    : 0;
+      }
+
+      &:hover {
+        background-color : $light;
+
+        .G-actions {
+          opacity : 1;
+        }
+      }
+    }
+  }
+
+
+  .G-tc {
+    flex-grow : 1;
+
+    p {
+      overflow      : hidden;
+      text-overflow : ellipsis;
+    }
+
+    &.G-short {
+      flex-basis : 50px;
+      flex-grow  : 0;
+      min-width  : 50px;
+    }
+
+    &:not(.G-short) {
+      width     : 100%;
+      min-width : 200px;
+    }
+  }
+}
+
+.G-table-empty {
+  height          : 50vh;
+  min-height      : 200px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+}

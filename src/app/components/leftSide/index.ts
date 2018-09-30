@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Services }            from './services';
 import { IMenuItemViewModel }  from './models';
+import { Login } from 'app/platform/services/guards/login';
 
 @Component({
   selector    : 'app-left-side',
@@ -16,7 +17,10 @@ export class AppLeftSide {
 
   constructor(
     private services: Services,
+    private login: Login,
   ) {}
+
+  public logOut = () => this.login.loggedOut();
 
   public changeItemIsOpenState = (item: IMenuItemViewModel): void => {
     item.isOpen = !item.isOpen;

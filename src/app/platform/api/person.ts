@@ -3,26 +3,22 @@ import { Injectable } from '@angular/core';
 import { Connection } from '../services/connection';
 
 import { IObservable } from '../models';
-import {
-  ILoginBodyViewModel,
-  ILoginResponseViewModel,
-} from '../models/api/token';
+import { IProfileDetailsResModel } from 'app/platform/models/api/person';
 
 @Injectable({
   providedIn: 'root',
 })
 
-export class TokenService {
+export class PersonService {
 
   constructor(
     private connection: Connection,
   ) { }
 
-  public login = (data: ILoginBodyViewModel): IObservable<ILoginResponseViewModel> => {
+  public getProfileDetails = (): IObservable<IProfileDetailsResModel> => {
     return this.connection.request({
-      url    : 'Token/Login',
-      method : 'Post',
-      data   : data,
+      url    : 'Person/ProfileDetails',
+      method : 'Get',
     });
   }
 }

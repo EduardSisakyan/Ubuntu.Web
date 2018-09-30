@@ -40,17 +40,11 @@ export class ErrorHandler {
         break;
       case 500:
         TOASTER.status = ToasterStatusEnum.error;
-        this.router.navigate([this.settings.defaultPath]);
-        break;
-      case 502:
-        this.router.navigate([this.settings.defaultPath]);
-        break;
-      case 502.3:
-        this.router.navigate([this.settings.defaultPath]);
         break;
       default:
         TOASTER.status = ToasterStatusEnum.error;
-        TOASTER.text = error.statusText || 'Something went wrong';
+        TOASTER.text = 'Something went wrong';
+        this.router.navigate([this.settings.defaultPath]);
         break;
     }
     this.dispatcher.toasterState = TOASTER;
@@ -73,15 +67,11 @@ export class ErrorHandler {
             if (BODY.success) {
               return of(BODY.data);
             } else {
-              BODY.messages.forEach((message: any) => {
-                if (message.value) {
-                  const TOASTER: IToasterModel = {
-                    status : ToasterStatusEnum.error,
-                    text   : message.value,
-                  };
-                  this.dispatcher.toasterState = TOASTER;
-                }
-              });
+              const TOASTER: IToasterModel = {
+                status : ToasterStatusEnum.error,
+                text   : BODY.message.value,
+              };
+              this.dispatcher.toasterState = TOASTER;
               throw BODY;
             }
           }

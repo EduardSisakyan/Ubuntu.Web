@@ -1,0 +1,30 @@
+
+<div class="UW-modal">
+  <h5 class="UW-title">Add new server</h5>
+
+  <div class="G-input-row">
+    <div class="G-input-group G-item">
+      <p>Name</p>
+      <input type="text" [(ngModel)]="data.name" [class.G-error]="errors.name" class="G-input">
+    </div>
+    <div class="G-input-group G-item">
+      <p>Host</p>
+      <input type="text" [(ngModel)]="data.host" [class.G-error]="errors.host" class="G-input">
+    </div>
+  </div>
+
+  <div class="G-input-row">
+    <div class="G-input-group G-item">
+      <p>Username</p>
+      <input type="text" [(ngModel)]="data.username" [class.G-error]="errors.username" class="G-input">
+    </div>
+    <div class="G-input-group G-item">
+      <p>Password</p>
+      <input type="password" [(ngModel)]="data.password" [class.G-error]="errors.password" class="G-input">
+    </div>
+  </div>
+
+  <div class="UW-btns G-flex G-justify-end">
+    <button class="G-btn" (click)="save()">Save</button>
+  </div>
+</div>

@@ -24,7 +24,6 @@ export class Dispatcher {
 
   //#endregion
 
-
   //#region LOADING
 
   private _loading: boolean;

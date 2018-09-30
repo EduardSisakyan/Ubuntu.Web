@@ -9,13 +9,14 @@ p {
   user-select : none;
 }
 
-.FM-pagination {
+.UW-pagination {
+  margin-top : 10px;
 
   p {
     cursor : pointer;
     color  : $gray;
 
-    &.active, &:hover, &.FM-btn {
+    &.active, &:hover, &.UW-btn {
       color : $blue;
     }
   }
